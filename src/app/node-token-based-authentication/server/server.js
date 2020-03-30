@@ -12,7 +12,7 @@ const api = require('../middlewares/routes/api');
 
 // MongoDB conection
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.db, {
+mongoose.connect( dbConfig.db, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {

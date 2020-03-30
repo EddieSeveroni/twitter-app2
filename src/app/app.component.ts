@@ -9,11 +9,11 @@ import { AuthService } from './shared/auth.service';
 })
 
 export class AppComponent {
-  title = 'twitter-app2';
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService) { }
 
   logout() {
     this.authService.doLogout()
   }
+
 }

@@ -13,7 +13,7 @@ const { check, validationResult } = require('express-validator');
 // Sign-up
 /** I Passed the validation array with the check() method inside the post() method as a second argument. 
  * Next, I called the validationResult() method to validate errors, and it returns the errors if found any. */
-router.post("/register-user", 
+router.post("/register", 
     [
         check('name')
             .not()
