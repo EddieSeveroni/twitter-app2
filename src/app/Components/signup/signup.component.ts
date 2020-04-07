@@ -31,13 +31,13 @@ user:User;
     alert('first alert')
     this.authService.signUp(this.signupForm.value).subscribe((res) => {
       alert('second alert')
-      console.log('sign-up')
-      if (res.result) {
+      console.log('sign-up') 
+      // if (res.result) {
         console.log('Entered if');
         console.log(res);
         this.signupForm.reset()
-        this.router.navigate(['/log-in']);
-      }
+        this.router.navigate(['/']);
+      // }
     })
   }
 }

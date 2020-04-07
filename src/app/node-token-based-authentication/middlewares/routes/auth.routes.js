@@ -61,8 +61,9 @@ router.post("/register",
  * In the signin API, we set the JWT token expiration time. Token will be expired within the defined duration. */
 
 // Sign-in
-router.post("/signin", (req, res, next) => {
+router.post("/sign-in", (req, res, next) => {
     let getUser;
+    console.log(req)
     userSchema.findOne({
         email: req.body.email
     }).then(user => {
