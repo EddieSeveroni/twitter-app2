@@ -31,8 +31,10 @@ export class AuthService {
 
   // Sign-in
   signIn(user: User) {
-    return this.http.post<any>(`${this.endpoint}/signin`, user)
+    console.log(user)
+    return this.http.post<any>(`${this.endpoint}/sign-in`, user)
       .subscribe((res: any) => {
+        console.log('accessToken')
         localStorage.setItem('access_token', res.token)
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res;
@@ -53,7 +55,7 @@ export class AuthService {
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
-      this.router.navigate(['log-in']);
+      this.router.navigate(['sign-in']);
     }
   }
 
